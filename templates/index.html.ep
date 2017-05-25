@@ -1,0 +1,23 @@
+% title 'Pseudorandom texts on everything.';
+% layout 'default'; 
+
+<div class="container">
+    <div class="row">
+        <div class="twelve columns title">
+            <h3>Homo sum humani a me nihil alienum puto</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="eleven columns">
+            <h5>Hello world.</h5>
+        </div>
+        <div class="one column">
+            <p>5.25.17</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <p>This is a possible message that a human or a computer can generate.</p>
+        </div>
+    </div>
+</div>
