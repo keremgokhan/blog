@@ -11,6 +11,8 @@
 *.swp
 *.swo
 
+log/
+
 # Devel::Cover
 cover_db/
 
