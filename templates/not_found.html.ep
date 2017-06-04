@@ -1,0 +1,10 @@
+% title 'Page not found';
+% layout 'default'; 
+
+<div class="container">
+    <div class="row">
+        <div class="twelve columns title">
+            <h3>Page not found <%= $status %></h3>
+        </div>
+    </div>
+</div>

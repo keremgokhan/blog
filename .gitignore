@@ -12,6 +12,7 @@
 *.swo
 
 log/
+lib/Configuration.pm
 
 # Devel::Cover
 cover_db/

@@ -1,12 +1,12 @@
 #!/usr/bin/env perl
-use Mojolicious::Lite;
+use strict;
+use warnings;
 
 # Documentation browser under "/perldoc"
-plugin 'PODRenderer';
+# plugin 'PODRenderer';
 
-get '/' => sub {
-  my $c = shift;
-  $c->render(template => 'index');
-};
+use FindBin;
+BEGIN { unshift @INC, "$FindBin::Bin/lib" }
 
-app->start;
+require Mojolicious::Commands;
+Mojolicious::Commands->start_app('Blog');
