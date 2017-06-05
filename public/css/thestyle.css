@@ -2,3 +2,12 @@
     margin-top: 5%;
     margin-bottom: 5%;
 }
+
+a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #DDD;
+}

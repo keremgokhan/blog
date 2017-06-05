@@ -27,11 +27,22 @@ sub all_posts {
             id          => $_->id,
             title       => $_->title,
             body        => $_->body,
-            created     => "1".$_->created->ymd('.')
+            created     => $_->formatted_date,
         }
     } @all;
 
     return \@posts;
+}
+
+sub formatted_date {
+    my $self = shift;
+    my $gregorian = $self->created->ymd('.');
+
+    # This code will work until 10000 in Gregorian Calendar.
+    # Well, that sounds enough.
+    my $holocene = "1$gregorian";
+    
+    return $holocene;
 }
 
 1;
