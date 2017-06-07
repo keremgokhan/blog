@@ -1,0 +1,32 @@
+% title 'Login';
+% layout 'blog'; 
+
+<div class="row">
+    <div class="ten columns">
+        <h5>Login</h5>
+    </div>
+</div>
+% if (my $error = flash 'error') {
+<div class="row">
+    <div class="ten columns">
+        <p><%= $error %></p>
+    </div>
+</div>
+% }
+<form action="/admin/login" method="POST">
+    <div class="row">
+        <div class="twelve columns">
+            <input name="username" type="text">
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <input name="password" type="password">
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <input class="button-primary" type="submit" value="Login">
+        </div>
+    </div>
+</form>
