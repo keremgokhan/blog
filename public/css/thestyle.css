@@ -96,3 +96,16 @@ select:focus {
     border: 1px #FFF;
     border-style: none none solid none;
 }
+
+/* Custom */
+
+.date {
+    text-align: left;
+}
+
+/* For devices larger than 750px */
+@media (min-width: 550px) {
+    .date {
+        text-align: right;
+    }
+}
