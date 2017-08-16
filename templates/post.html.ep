@@ -6,11 +6,11 @@
         <h5><%= $title %></h5>
     </div>
     <div class="two columns">
-        <p><%= $created %><p>
+        <p><%= $created %></p>
     </div>
 </div>
 <div class="row">
     <div class="twelve columns">
-        <p><%= $body %></p>
+        <p><%== $body %></p>
     </div>
 </div>
