@@ -24,10 +24,11 @@ sub all_posts {
 
     my @posts = map {
         {
-            id          => $_->id,
-            title       => $_->title,
-            body        => $_->body,
-            created     => $_->formatted_date,
+            id              => $_->id,
+            title           => $_->title,
+            body            => $_->body,
+            created_date    => $_->formatted_date,
+            created_time    => $_->formatted_time,
         }
     } @all;
 
@@ -43,6 +44,14 @@ sub formatted_date {
     my $holocene = "1$gregorian";
     
     return $holocene;
+}
+
+sub formatted_time {
+    my $self = shift;
+
+    my $time = $self->created->hms;
+
+    return $time;
 }
 
 1;

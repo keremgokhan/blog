@@ -6,7 +6,9 @@
         <h5><%= $title %></h5>
     </div>
     <div class="two columns date">
-        <p><%= $created %></p>
+        <p title="<%= $created_time %>">
+            <%= $created_date %>
+        </p>
     </div>
 </div>
 <div class="row">

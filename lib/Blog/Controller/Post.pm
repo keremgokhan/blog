@@ -16,7 +16,8 @@ sub index {
         template => 'post',
         title => $post->title,
         body => $post->body,
-        created => $post->formatted_date 
+        created_date => $post->formatted_date,
+        created_time => $post->formatted_time 
     );
 }
 
