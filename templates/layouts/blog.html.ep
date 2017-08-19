@@ -1,14 +1,33 @@
 % extends 'layouts/default'; 
 
 % content html => begin
+
+% my $add_class = defined $user ? "logged" : "";
+
 <div class="container">
     <div class="row">
-        <div class="twelve columns title">
+        <div class="twelve columns title <%= $add_class %>">
             <a href="/"><h3>Homo sum, humani a me nihil alienum puto</h3></a>
         </div>
     </div>
-
-    <%= content %>
-
+    % if (defined $user) {
+        <nav class="row navbar">
+            <ul class="navbar-list">
+                <li class="two columns navbar-item">
+                    <a href="/">New</a>
+                </li>
+                <li class="two columns navbar-item">
+                    <a href="/admin">Admin</a>
+                </li>
+                <li class="two columns navbar-item">
+                    <a href="/logout">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    % }
 </div>
+<div class="container">
+    <%= content %>
+</div>
+
 % end

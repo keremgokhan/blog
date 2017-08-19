@@ -1,5 +1,5 @@
 % title 'Pseudorandom texts on everything.';
-% layout 'blog'; 
+% layout 'blog';
 
 % for my $post (@{$posts}) {
     <div class="row">

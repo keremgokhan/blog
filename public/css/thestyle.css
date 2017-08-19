@@ -8,6 +8,10 @@ body {
     margin-bottom: 5%;
 }
 
+.title.logged {
+    margin-bottom: 0;
+}
+
 a {
     color: #FFF;
     text-decoration: none;
@@ -99,8 +103,26 @@ select:focus {
 
 /* Custom */
 
+li {
+    margin: 0 auto;
+}
+
 .date {
     text-align: left;
+}
+
+.navbar {
+    padding: 10px 0 10px 0; 
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5%;
+}
+
+.navbar-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 /* For devices larger than 750px */
