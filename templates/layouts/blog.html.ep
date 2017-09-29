@@ -2,6 +2,7 @@
 
 % content html => begin
 
+% my $user = stash 'user';
 % my $add_class = defined $user ? "logged" : "";
 
 <div class="container">
@@ -20,7 +21,7 @@
                     <a href="/admin">Admin</a>
                 </li>
                 <li class="two columns navbar-item">
-                    <a href="/logout">Logout</a>
+                    <a href="/admin/logout">Logout</a>
                 </li>
             </ul>
         </nav>

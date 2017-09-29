@@ -26,8 +26,8 @@ sub startup {
     $r->post('/post')->to('post#create')->name('create_post');
 
     $r->get('/admin')->to('admin#index')->name('admin');
-    $r->post('/admin/login')->to('admin#login')->name('login');
-    $r->get('/admin/logout')->to('admin#logout')->name('logout');
+    $r->post('/admin/login')->to('admin#user_login')->name('login');
+    $r->get('/admin/logout')->to('admin#user_logout')->name('logout');
 }
 
 1;

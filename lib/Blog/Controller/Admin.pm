@@ -17,7 +17,7 @@ sub index {
     $self->render( template => 'admin', username => $user->name);
 }
 
-sub login {
+sub user_login {
     my $self = shift;
 
     my $username = $self->param('username');
@@ -37,7 +37,7 @@ sub login {
     }
 }
 
-sub logout {
+sub user_logout {
     my $self = shift;
 
     $self->logout;
