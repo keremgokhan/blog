@@ -14,7 +14,19 @@ sub index {
 
     my $user = $self->user;
 
-    $self->render( template => 'admin', username => $user->name);
+    my %data = (
+        template => 'admin',
+        username => $user->name,
+    );
+
+    $self->get_user( \%data );
+
+    $self->render( %data );
+}
+
+sub get_user {
+    my ($self, $data) = @_;
+    $data->{user} = $self->is_user_authenticated ? $self->user : undef;
 }
 
 sub user_login {
@@ -43,6 +55,21 @@ sub user_logout {
     $self->logout;
 
     $self->redirect_to('admin');
+}
+
+sub create_post {
+    my $self = shift;
+
+    unless ( $self->is_user_authenticated ) {
+        $self->render( template => 'login' );
+        return;
+    }
+
+    my %data = ( template => 'create' );
+
+    $self->get_user( \%data );
+
+    $self->render( %data );
 }
 
 1;

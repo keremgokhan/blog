@@ -3,7 +3,7 @@ package Blog::Db;
 use strict;
 use warnings;
 
-use base 'Class::DBI::mysql';
+use base 'Class::DBI';
 
 use Configuration;
 

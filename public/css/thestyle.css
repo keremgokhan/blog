@@ -131,6 +131,22 @@ li {
     color: #FFF;
 }
 
+.title-input {
+    width: 100%;
+    display: block;
+}
+
+.post-body {
+    width: 100%;
+    min-height:300px;
+    display: block;
+    resize: vertical;
+}
+
+.borderless {
+    border: 0px solid !important;
+}
+
 /* For devices larger than 750px */
 @media (min-width: 550px) {
     .date {

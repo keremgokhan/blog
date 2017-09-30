@@ -4,7 +4,6 @@ use Mojo::Base 'Mojolicious::Controller';
 
 use Blog::Db::Post;
 use Blog::Db::User;
-use Data::Dumper;
 
 sub index {
     my $self = shift;

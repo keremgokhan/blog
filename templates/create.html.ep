@@ -1,0 +1,27 @@
+% title 'New post';
+% layout 'blog'; 
+
+<form action="/post" method="POST">
+    <div class="row">
+        <div class="twelve columns">
+            <input class="borderless title-input" name="title" type="text" placeholder="You can enter a title here.">
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <textarea class="borderless post-body" name="body" placeholder="Here you can enter AN ENTIRE MESSAGE CONTENT. No joking. This is the future."></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <input class="button-primary" type="submit" value="Post">
+        </div>
+    </div>
+</form>
+% if (my $error = flash 'error') {
+<div class="row">
+    <div class="ten columns">
+        <p><%= $error %></p>
+    </div>
+</div>
+% }

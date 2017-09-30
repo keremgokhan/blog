@@ -28,6 +28,8 @@ sub startup {
     $r->get('/admin')->to('admin#index')->name('admin');
     $r->post('/admin/login')->to('admin#user_login')->name('login');
     $r->get('/admin/logout')->to('admin#user_logout')->name('logout');
+
+    $r->get('/admin/create')->to('admin#create_post')->name('create');
 }
 
 1;

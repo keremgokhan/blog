@@ -15,7 +15,7 @@
         <nav class="row navbar">
             <ul class="navbar-list">
                 <li class="two columns navbar-item">
-                    <a href="/">New</a>
+                    <a href="/admin/create">New</a>
                 </li>
                 <li class="two columns navbar-item">
                     <a href="/admin">Admin</a>

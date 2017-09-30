@@ -2,12 +2,16 @@ package Blog::Db::User;
 
 use base 'Blog::Db';
 
-Blog::Db::User->table('User');
+__PACKAGE__->table('User');
 
-Blog::Db::User->columns(
+__PACKAGE__->columns(
     All => qw/id name password updated/
 );
 
-Blog::Db::User->has_many('posts', 'Blog::Db::Post' => 'author_id');
+__PACKAGE__->columns(
+    Primary => qw/id/
+);
+
+__PACKAGE__->has_many('posts', 'Blog::Db::Post' => 'author_id');
 
 1;

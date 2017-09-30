@@ -10,6 +10,10 @@ __PACKAGE__->columns(
     All => qw/id title body author_id created updated/
 );
 
+__PACKAGE__->columns(
+    Primary => qw/id/
+);
+
 __PACKAGE__->has_a(author_id => 'Blog::Db::User');
 
 __PACKAGE__->has_a(created => 'Time::Piece',
@@ -52,6 +56,25 @@ sub formatted_time {
     my $time = $self->created->hms;
 
     return $time;
+}
+
+sub add_new {
+    my ($self, $param) = @_;
+
+    my $title = $param->{title};
+    my $body = $param->{body};
+    my $user = $param->{user};
+
+    return unless defined $user;
+    return if (!$title && !$body);
+
+    my $post = Blog::Db::Post->insert({
+        author_id => $user->{id}, 
+        title => $title,
+        body => $body,
+    });
+
+    return $post;
 }
 
 1;
