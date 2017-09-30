@@ -1,6 +1,6 @@
 body {
     color: #FFF;
-    background: #000;
+    background: #111111;
 }
 
 .title {
@@ -113,8 +113,7 @@ li {
 
 .navbar {
     padding: 10px 0 10px 0; 
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid #AAAAAA;
     margin-bottom: 5%;
 }
 
@@ -122,7 +121,14 @@ li {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    text-transform: uppercase;
+}
+
+.navbar-item a {
+    color: #AAAAAA;
+}
+
+.navbar-item a:hover {
+    color: #FFF;
 }
 
 /* For devices larger than 750px */
