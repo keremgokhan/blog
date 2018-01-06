@@ -41,3 +41,6 @@ inc/
 /pm_to_blib
 /*.zip
 /hypnotoad.pid
+
+# Dev Environment
+/.atom-live-server.json
