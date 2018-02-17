@@ -4,6 +4,7 @@ use Mojo::Base 'Mojolicious';
 use Mojolicious::Plugin::Authentication;
 
 use Blog::Authentication;
+use Blog::Controller;
 
 sub startup {
     my $self = shift;
@@ -18,6 +19,8 @@ sub startup {
 	'validate_user'         => \&Blog::Authentication::validate_user,
 	'current_user_fn'       => 'user'
     });
+
+    $self->controller_class('Blog::Controller');
 
     my $route_map = {
         '/' => {

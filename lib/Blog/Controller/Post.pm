@@ -1,6 +1,6 @@
 package Blog::Controller::Post;
 
-use Mojo::Base 'Mojolicious::Controller';
+use Mojo::Base 'Blog::Controller';
 
 use Blog::Db::Post;
 use Blog::Db::User;

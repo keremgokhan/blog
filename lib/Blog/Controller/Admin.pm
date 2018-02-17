@@ -1,6 +1,6 @@
 package Blog::Controller::Admin;
 
-use Mojo::Base 'Mojolicious::Controller';
+use Mojo::Base 'Blog::Controller';
 
 use Blog::Db::User;
 
@@ -22,11 +22,6 @@ sub index {
     $self->get_user( \%data );
 
     $self->render( %data );
-}
-
-sub get_user {
-    my ($self, $data) = @_;
-    $data->{user} = $self->is_user_authenticated ? $self->user : undef;
 }
 
 sub user_login {
