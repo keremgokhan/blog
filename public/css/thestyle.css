@@ -153,3 +153,9 @@ li {
         text-align: right;
     }
 }
+
+.footer {
+    text-align: right;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}

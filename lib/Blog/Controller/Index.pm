@@ -10,7 +10,8 @@ sub index {
 
     my %data = (template => 'index');
 
-    $self->get_user(\%data);
+    $self->init(\%data);
+
     $self->get_posts(\%data);
 
     $self->render(%data);

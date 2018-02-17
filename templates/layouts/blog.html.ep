@@ -30,5 +30,11 @@
 <div class="container">
     <%= content %>
 </div>
-
+<div class="container">
+    <div class="row footer">
+        <div class="twelve columns">
+            <span>Kerem Gokhan - <%= $today %></span>
+        </div>
+    </div>
+</div>
 % end

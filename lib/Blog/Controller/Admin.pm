@@ -12,14 +12,11 @@ sub index {
         return;
     }
 
-    my $user = $self->user;
-
     my %data = (
         template => 'admin',
-        username => $user->name,
     );
 
-    $self->get_user( \%data );
+    $self->init( \%data );
 
     $self->render( %data );
 }
