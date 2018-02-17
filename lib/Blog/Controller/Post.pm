@@ -22,7 +22,8 @@ sub index {
     );
 
     $self->init(\%data);
-    $self->render(\%data);
+
+    $self->render(%data);
 }
 
 sub create {
