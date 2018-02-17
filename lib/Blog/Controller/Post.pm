@@ -13,13 +13,16 @@ sub index {
     my $post = Blog::Db::Post->retrieve($id)
         or return $self->reply->not_found;
 
-    $self->render(
+    my %data = (
         template => 'post',
         title => $post->title,
         body => $post->body,
         created_date => $post->formatted_date,
         created_time => $post->formatted_time 
     );
+
+    $self->init(\%data);
+    $self->render(\%data);
 }
 
 sub create {
