@@ -1,0 +1,40 @@
+% extends 'layouts/default'; 
+
+% content html => begin
+
+% my $user = stash 'user';
+% my $add_class = defined $user ? "logged" : "";
+
+<div class="container">
+    <div class="row">
+        <div class="twelve columns title <%= $add_class %>">
+            <a href="/sketchbook"><h2>Sketchbook.</h2></a>
+        </div>
+    </div>
+    % if (defined $user) {
+        <nav class="row navbar">
+            <ul class="navbar-list">
+                <li class="two columns navbar-item">
+                    <a href="/admin/create">New</a>
+                </li>
+                <li class="two columns navbar-item">
+                    <a href="/admin">Admin</a>
+                </li>
+                <li class="two columns navbar-item">
+                    <a href="/admin/logout">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    % }
+</div>
+<div class="container">
+    <%= content %>
+</div>
+<div class="container">
+    <div class="row footer">
+        <div class="twelve columns">
+            <span>Kerem Gokhan - <%= $today %></span>
+        </div>
+    </div>
+</div>
+% end

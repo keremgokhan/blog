@@ -1,0 +1,21 @@
+% title 'Sketchbook';
+% layout 'sketchbook';
+
+% my $columns   = 3;
+% my $size      = scalar @{$images};
+% my $rows      = $size / $columns;
+
+% for my $r (0 .. $rows) {
+    <div class="row">
+        % for my $c (0 .. $columns-1) {
+            % my $i = $r * $columns + $c;
+            % last if $i == $size; 
+            <div class="four columns">
+                <div class="sketchbook-column">
+                    <img id="<%= $i %>"class="galeria-thumbnail sketchbook-thumbnail" src="images/sketch.jpg"> 
+                </div>
+            </div>
+        % }
+    </div>
+% }
+

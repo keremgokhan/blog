@@ -64,4 +64,22 @@ sub create_post {
     $self->render( %data );
 }
 
+sub upload_images {
+    my $self = shift;
+
+    # Check file size
+    return $self->render(error => 'File is too big.', status => 200)
+        if $self->req->is_limit_exceeded;
+
+    my @files;
+    for my $file (@{$self->req->uploads('files')}) {
+        my $size = $file->size;
+        my $name = $file->filename;
+
+        push @files, "$name ($size)";
+
+        print STDERR "File uploaded. Name: $name, Size: $sizei\n";
+    }
+}
+
 1;

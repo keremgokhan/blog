@@ -18,7 +18,8 @@ a {
 }
 
 a:hover {
-    color: #DDD;
+    color: #FFF;
+    opacity: 0.5;
 }
 
 .button,
@@ -154,7 +155,7 @@ li {
     }
 }
 
-.footer {
+.footer div {
     text-align: right;
     margin-top: 30px;
     margin-bottom: 60px;

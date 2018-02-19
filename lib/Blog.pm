@@ -64,6 +64,18 @@ sub startup {
             name        => 'create',
             controller  => 'admin',
             action      => 'create_post'
+        },
+        '/admin/upload' => {
+            method      => 'POST',
+            name        => 'upload_files',
+            contoller   => 'admin',
+            action      => 'upload_files'
+        },
+        '/sketchbook' => {
+            method      => 'GET',
+            name        => 'sketchbook',
+            controller  => 'sketchbook',
+            action      => 'index'
         }
     };
 
