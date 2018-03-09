@@ -7,16 +7,17 @@ use Blog::Db::User;
 sub index {
     my $self = shift;
 
-    unless ( $self->is_user_authenticated ) {
-        $self->render( template => 'login' );
-        return;
-    }
-
     my %data = (
         template => 'admin',
     );
 
     $self->init( \%data );
+
+    unless ( $self->is_user_authenticated ) {
+        $data{template} = 'login';
+        $self->render( %data );
+        return;
+    }
 
     $self->render( %data );
 }
@@ -78,7 +79,7 @@ sub upload_images {
 
         push @files, "$name ($size)";
 
-        print STDERR "File uploaded. Name: $name, Size: $sizei\n";
+        print STDERR "File uploaded. Name: $name, Size: $size\n";
     }
 }
 
