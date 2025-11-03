@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: blog-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: blog
+      MYSQL_USER: bloguser
+      MYSQL_PASSWORD: blogpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - blog-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  blog:
+    build: .
+    container_name: blog-app
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: blog
+      DB_USER: bloguser
+      DB_PASSWORD: blogpassword
+      SESSION_SECRET: change-this-in-production-to-something-secure
+      ENV: production
+    ports:
+      - "7070:7070"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - blog-network
+    restart: unless-stopped
+
+volumes:
+  mysql-data:
+
+networks:
+  blog-network:
+    driver: bridge
