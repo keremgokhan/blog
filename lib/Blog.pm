@@ -11,7 +11,7 @@ sub startup {
 
     # Dev mode: better debugging
     # $self->mode('development');
-    
+
     $self->plugin('authentication' => {
 	'autoload_user'         => 1,
 	'session_key'           => 'blog',

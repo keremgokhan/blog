@@ -153,11 +153,31 @@ li {
     border: 0px solid !important;
 }
 
+.marginbottom {
+    margin-bottom: 45px;
+}
+
 /* For devices larger than 750px */
 @media (min-width: 550px) {
     .date {
         text-align: right;
     }
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%; height: 0;
+    overflow: hidden; max-width: 100%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .footer div {

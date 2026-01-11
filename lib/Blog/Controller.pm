@@ -1,6 +1,7 @@
 package Blog::Controller;
 
 use Mojo::Base 'Mojolicious::Controller';
+use DateTime;
 
 sub init {
     my ($self, $data) = @_;
@@ -24,9 +25,12 @@ sub get_user {
 sub get_date {
     my ($self, $data) = @_;
 
-    my $date = Mojo::Date->new;
+    my $date = DateTime->now;
 
-    $data->{today} = $date->to_string;
+    my $day_name = $date->day_name;
+    my $date_string = $date->ymd('.');
+
+    $data->{today} = "Today is $day_name 1$date_string in Amsterdam.";
 }
 
 1;

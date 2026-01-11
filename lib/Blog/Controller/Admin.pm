@@ -60,8 +60,8 @@ sub create_post {
 
     my %data = ( template => 'create' );
 
-    $self->get_user( \%data );
-
+    $self->init( \%data );
+    
     $self->render( %data );
 }
 

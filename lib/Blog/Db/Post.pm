@@ -1,5 +1,7 @@
 package Blog::Db::Post;
 
+use utf8;
+
 use base 'Blog::Db';
 use Time::Piece::MySQL;
 use Class::DBI::Plugin::RetrieveAll;
@@ -25,6 +27,10 @@ sub all_posts {
     my $self = shift;
 
     my @all = Blog::Db::Post->retrieve_all_sorted_by("created DESC");
+
+    foreach ( @all ) {
+        utf8::decode($_->title);
+    } 
 
     my @posts = map {
         {

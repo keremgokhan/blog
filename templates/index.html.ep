@@ -1,4 +1,4 @@
-% title 'Pseudorandom texts on everything.';
+% title 'Pseudorandom posts on everything.';
 % layout 'blog';
 
 % for my $post (@{$posts}) {
@@ -14,7 +14,7 @@
             </p>
         </div>
     </div>
-    <div class="row">
+    <div class="row marginbottom">
         <div class="twelve columns">
             <p><%== $post->{body} %></p>
         </div>

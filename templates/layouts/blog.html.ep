@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="twelve columns title <%= $add_class %>">
-            <a href="/"><h3>Homo sum, humani a me nihil alienum puto</h3></a>
+            <a href="/"><h3 title='"I am human, nothing human is alien to me." Publius Terentius Afer'>Homo sum, humani nihil a me alienum puto</h3></a>
         </div>
     </div>
     % if (defined $user) {
@@ -33,7 +33,7 @@
 <div class="container">
     <div class="row footer">
         <div class="twelve columns">
-            <span>Kerem Gokhan - <%= $today %></span>
+            <span><%= $today %></span>
         </div>
     </div>
 </div>
